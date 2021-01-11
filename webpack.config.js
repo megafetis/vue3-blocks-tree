@@ -15,7 +15,7 @@ module.exports = (env = {}) => ({
   context: path.resolve(__dirname, 'src'),
   mode: env.production ? 'production' : 'development',
   entry: {
-    "v-org-tree": './main.ts',
+    "vue-blocks-tree": './index.ts',
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -140,17 +140,17 @@ module.exports = (env = {}) => ({
     alias: {
       // 'vue': '@vue/runtime-dom'
       //  'vue': 'vue/dist/vue.esm-bundler.js'
-      'vue': 'vue/dist/vue.runtime.esm-browser.prod'
+      // 'vue': 'vue/dist/vue.runtime.esm-browser.prod'
       // 'vue': 'vue/dist/vue.esm-browser.prod'
     }
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      template: './public/index.html',
-      minify: false,
-      favicon: './public/favicon.ico',
-    }),
+    // new HtmlWebpackPlugin({
+    //   template: './public/index.html',
+    //   minify: false,
+    //   favicon: './public/favicon.ico',
+    // }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
 

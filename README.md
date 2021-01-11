@@ -1,31 +1,123 @@
-# Vue 3 webpack boilerplate
+# vue3-blocks-tree
 
-This is preview version Vue 3, DO NOT USE IN PRODUCTION!
+> A simple organization tree view based on Vue3.x
 
-## Includes
+## Usage
+```vue
 
-- Vue 3.0.0-beta.18
-- Vue Router 4.0.0-beta.1
-- Vuex 4.0.0-beta.4
-- Typescript 3.9.6
-- Babel 7.10.4
-- Webpack 4.43.0
+<template>
 
+</template>
 
-## Project setup
+<script>
+im
+
+</script>
+
 ```
-npm install
+### NPM
+
+```
+# use npm
+npm i vue3-blocks-tree
+
+# use yarn
+yarn add vue3-blocks-tree
+```
+### Import Plugins
+
+``` js
+import {createApp} from 'vue';
+import VueBlocksTree from 'vue3-blocks-tree'
+
+createApp(App).component('blocks-tree',VueBlocksTree)
+
+// ...
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+### CDN
+
+``` html
+# css
+<link href="https://unpkg.com/vue2-org-tree/dist/style.css">
+
+# js
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue2-org-tree/dist/index.js"></script>
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### To Do
-- webpack 5
+## API
+
+#### props
+
+  prop              | descripton                              | type                   | default
+  ------------------|-----------------------------------------|:----------------------:|:---------------------------------------------------------:
+  data              |                                         | `Object`               |
+  props             |  configure props                        | `Object`               | `{label: 'label', children: 'children', expand: 'expand'}`
+  labelWidth        |  node label width                       | `String` \| `Number`   | `auto`
+  collapsable       |  children node is collapsable           | `Boolean`              | `true`
+  renderContent     |  how to render node label               | `Function`             |     -
+  labelClassName    |  node label class                       | `Function` \| `String` |     -
+
+
+
+### events
+
+  event name        | descripton                              | type
+  ------------------|-----------------------------------------|:----------------------
+  node-click        |  Click event                            | `Function`
+  node-mouseover    |  onMouseOver event                      | `Function`
+  node-mouseout     |  onMouseOut event                       | `Function`
+  node-expand       |  click expand button event              | `Function`
+
+### Slots
+
+  slot name         | descripton                              | params
+  ------------------|-----------------------------------------|:----------------------
+  node              |  current node scoped slot               | data - node data, context - node context
+
+#### node-expand
+well be called when the collapse-btn clicked
+
+- params `e` `Event`
+- params `data` `Current node data`
+- params `context` `Node context`
+
+#### node-click
+well be called when the node-label clicked
+
+- params `e` `Event`
+- params `data` `Current node data`
+- params `context` `Node context`
+
+#### node-mouseover
+It is called when the mouse hovers over the label.
+
+- params `e` `Event`
+- params `data` `Current node data`
+- params `context` `Node context`
+
+#### node-mouseout
+It is called when the mouse leaves the label.
+
+- params `e` `Event`
+- params `data` `Current node data`
+
+## Example
+
+- default
+
+  ![default](./images/default.png)
+
+- horizontal
+
+  ![horizontal](./images/horizontal.png)
+
+- use node slot
+
+  ![horizontal](./images/horizontal.png)
+
+
+## License
+[MIT](http://opensource.org/licenses/MIT)
