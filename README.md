@@ -6,11 +6,42 @@
 ```vue
 
 <template>
-
+  <div>
+    <blocks-tree></blocks-tree>
+  </div>
 </template>
 
 <script>
-im
+import {defineComponent} from 'vue';
+
+export default defineComponent({
+
+  setup(props) {
+    let treeData = {
+      label:'root',
+      expand:true,
+      children:[
+        {label:'child 1'},
+        {label:'child 2'},
+        {label:'subparent 1',expand:false,children:[
+          {label:'subchild 1'},
+          {label:'subchild 2',expand:false, children:[
+            {label:'subchild 11'},
+            {label:'subchild 22'},
+          ]
+          },
+        ]
+        },
+      ]
+    
+    }
+    return {
+    
+    }
+  
+  }
+
+})
 
 </script>
 
