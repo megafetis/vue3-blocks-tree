@@ -94,8 +94,14 @@ export default defineComponent({
 
 </script>
 
-
 ```
+
+### Demo
+
+
+[https://megafetis.github.io/vue3-blocks-tree-demo]
+
+
 ### NPM
 
 ```
@@ -121,6 +127,7 @@ createApp(App)
 
 // ...
 ```
+
 
 ## API
 
