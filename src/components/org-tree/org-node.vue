@@ -37,7 +37,7 @@
 
 <script lang="ts">
 import {defineComponent,computed, nextTick,watch,watchEffect,ref,Prop, reactive} from 'vue';
-
+import {NodeContext} from '../../../types/vue3-blocks-tree'
 export default defineComponent({
     name:'org-node',
 
@@ -101,7 +101,7 @@ export default defineComponent({
             emit('node-expand',e,props.data,nodeContext);
         }
 
-        const nodeContext = {
+        const nodeContext = <NodeContext>{
             isExpanded:()=>expanded.value,
             toggleExpand,
 

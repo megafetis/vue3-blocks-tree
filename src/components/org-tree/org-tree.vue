@@ -26,7 +26,7 @@
 <script lang="ts">
 import OrgTreeNode from './org-node.vue';
 import {defineComponent} from 'vue';
-
+import {PropsType} from '../../../types/vue3-blocks-tree';
 export default defineComponent({
   name: 'Vue2OrgTree',
   components: {
@@ -39,7 +39,7 @@ export default defineComponent({
     },
     props: {
       type: Object,
-      default: () => ({
+      default: () => (<PropsType>{
         label: 'label',
         expand: 'expand',
         children: 'children'
