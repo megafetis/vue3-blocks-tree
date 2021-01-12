@@ -15,7 +15,7 @@ module.exports = (env = {}) => ({
   context: path.resolve(__dirname, 'src'),
   mode: env.production ? 'production' : 'development',
   entry: {
-    "vue-blocks-tree": './index.ts',
+    "vue3-blocks-tree": './index.ts',
   },
   output: {
     path: path.resolve(__dirname, "dist"),
