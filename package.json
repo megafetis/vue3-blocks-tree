@@ -1,6 +1,6 @@
 {
   "name": "vue3-blocks-tree",
-  "version": "0.1.0",
+  "version": "0.2.2",
   "description": "A vue3 block organization tree view component. Hierarchical horizontal or vertical tree",
   "main": "dist/vue3-blocks-tree.umd.min.js",
   "author": "megafetis",
@@ -47,9 +47,9 @@
     "vue": "^3.0.0"
   },
   "bugs": {
-    "url": "https://github.com/megafetis/v-org-tree/issues"
+    "url": "https://github.com/megafetis/vue3-blocks-tree/issues"
   },
-  "homepage": "https://github.com/megafetis/v-org-tree",
+  "homepage": "https://github.com/megafetis/vue3-blocks-tree",
   "keywords": [
     "vue",
     "vue3",
@@ -57,12 +57,15 @@
     "vue next",
     "tree",
     "org",
+    "select",
+    "tree select",
+    "blocks",
     "hierarchy",
     "hierarchical"
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/megafetis/v-org-tree.git"
+    "url": "git+https://github.com/megafetis/vue3-blocks-tree.git"
   }
 }

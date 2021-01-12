@@ -1,3 +1,3 @@
-import Vue3OrgTree from './components/org-tree/org-tree.vue'
+import Vue3OrgTree from './components/blocks-tree/blocks-tree.vue';
 
-export default Vue3OrgTree
+export default Vue3OrgTree;

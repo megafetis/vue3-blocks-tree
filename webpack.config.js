@@ -16,6 +16,7 @@ module.exports = (env = {}) => ([{
   mode: env.production ? 'production' : 'development',
   entry: {
     "vue3-blocks-tree": './index.ts',
+    "vue3-blocks-tree-style":"./styles/blocks-tree.less"
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -127,7 +128,7 @@ module.exports = (env = {}) => ([{
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: 'vue3-blocks-tree.css',
 
     }),
     new WebpackBar(),

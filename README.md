@@ -109,8 +109,9 @@ yarn add vue3-blocks-tree
 
 ``` js
 import {createApp} from 'vue';
-import VueBlocksTree from 'vue3-blocks-tree'
-
+import VueBlocksTree from 'vue3-blocks-tree';
+import 'vue3-blocks-tree/dist/vue3-blocks-tree.css';
+// or import 'vue3-blocks-tree/src/styles/blocks-tree.less';
 createApp(App).component('blocks-tree',VueBlocksTree)
 
 // ...
