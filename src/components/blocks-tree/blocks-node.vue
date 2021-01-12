@@ -14,7 +14,7 @@
             </div>
         </div>
         <div v-if="(collapsable && expanded && !isLeaf) || (!collapsable && !isLeaf)" class="org-tree-node-children">
-            <org-node v-for="ch in data[props.children]"
+            <blocks-node v-for="ch in data[props.children]"
                 :data="ch"
                 :props="props"
                 :collapsable="collapsable"
@@ -30,7 +30,7 @@
             <template #node="{data,context}">
                 <slot name="node" :data="data" :context="context"></slot>
             </template>
-            </org-node>
+            </blocks-node>
         </div>
     </div>
 </template>
@@ -39,7 +39,7 @@
 import {defineComponent,computed, nextTick,watch,watchEffect,ref,Prop, reactive} from 'vue';
 import {NodeContext} from '../../../types/vue3-blocks-tree'
 export default defineComponent({
-    name:'org-node',
+    name:'blocks-node',
 
     props:{
         data:{

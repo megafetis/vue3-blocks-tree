@@ -1,14 +1,12 @@
 {
   "name": "vue3-blocks-tree",
-  "version": "0.2.2",
+  "version": "0.4.1",
   "description": "A vue3 block organization tree view component. Hierarchical horizontal or vertical tree",
-  "main": "dist/vue3-blocks-tree.umd.min.js",
+  "main": "dist/vue3-blocks-tree.common.js",
+  "unpkg": "dist/vue3-blocks-tree.umd.js",
   "author": "megafetis",
   "scripts": {
-    "serve": "webpack-dev-server",
-    "watch": "webpack --watch",
-    "build": "webpack --env.production",
-    "dev": "webpack",
+    "build": "vue-cli-service build --target lib --name vue3-blocks-tree ./src/index.ts && webpack --env.production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
@@ -17,6 +15,9 @@
     "@babel/preset-typescript": "^7.12.7",
     "@types/ts-nameof": "4.2.1",
     "@vue/compiler-sfc": "3.0.5",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^6.0.3",
@@ -49,7 +50,17 @@
   "bugs": {
     "url": "https://github.com/megafetis/vue3-blocks-tree/issues"
   },
+  "browserslist": [
+    "Android >= 4.0",
+    "iOS >= 8"
+  ],
   "homepage": "https://github.com/megafetis/vue3-blocks-tree",
+  "files": [
+    "types",
+    "dist/*.js",
+    "dist/*.css",
+    "src"
+  ],
   "keywords": [
     "vue",
     "vue3",
@@ -62,6 +73,13 @@
     "blocks",
     "hierarchy",
     "hierarchical"
+  ],
+  "typings": "types/index.d.ts",
+  "style": "dist/vue3-blocks-tree.css",
+  "sideEffects": [
+    "src/**/styles/*",
+    "*.css",
+    "*.less"
   ],
   "license": "MIT",
   "repository": {
