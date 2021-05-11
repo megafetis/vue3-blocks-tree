@@ -42,7 +42,8 @@ export default defineComponent({
       default: () => (<PropsType>{
         label: 'label',
         expand: 'expand',
-        children: 'children'
+        children: 'children',
+        key: 'key'
       })
     },
     horizontal: Boolean,
