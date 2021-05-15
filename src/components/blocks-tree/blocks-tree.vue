@@ -1,8 +1,7 @@
 <template>
   <div class="org-tree-container">
     <div class="org-tree" :class="{horizontal, collapsable}">
-      <blocks-node
-        :key="data[props.key] || data[props.label]"
+      <BlocksNode
         :data="data"
         :props="props"
         :horizontal="horizontal"
@@ -19,19 +18,19 @@
       <template #node="{data,context}">
         <slot name="node" :data="data" :context="context"></slot>
       </template>
-      </blocks-node>
+      </BlocksNode>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import BlocksNode from './blocks-node.vue';
-import {defineComponent} from 'vue';
+import {defineComponent,ref} from 'vue';
 import {PropsType} from '../../../types/vue3-blocks-tree';
 export default defineComponent({
   name: 'blocks-tree',
   components: {
-    'blocks-node':BlocksNode
+    BlocksNode
   },
   props: {
     data: {
