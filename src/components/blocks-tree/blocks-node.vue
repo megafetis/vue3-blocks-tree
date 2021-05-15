@@ -14,7 +14,7 @@
             </div>
         </div>
         <div v-if="(collapsable && expanded && !isLeaf) || (!collapsable && !isLeaf)" class="org-tree-node-children">
-            <blocks-node v-for="ch in data[props.children]"
+            <blocks-node v-for="ch in data[props.children]" :key="ch[props.key] || ch[props.label]"
                 :data="ch"
                 :props="props"
                 :collapsable="collapsable"
@@ -51,7 +51,8 @@ export default defineComponent({
             default:()=>({
                 label: 'label',
                 expand: 'expand',
-                children: 'children'
+                children: 'children',
+                key:'id'
             })
         },
         collapsable:{

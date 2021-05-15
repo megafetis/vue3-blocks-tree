@@ -10,12 +10,12 @@ Thanks to [hukaibaihu](https://github.com/hukaibaihu/vue-org-tree) and his sourc
 <template>
     <h1>Basic</h1>
     <div>
-        <blocks-tree :data="treeData" :horizontal="treeOrientation=='1'" :collapsable="true"></blocks-tree>
+        <blocks-tree :data="treeData" :horizontal="treeOrientation=='1'"  :collapsable="true"></blocks-tree>
     </div>
 
     <h1>With slots</h1>
     <div>
-        <blocks-tree :data="treeData" :horizontal="treeOrientation=='1'" :collapsable="true">
+        <blocks-tree :data="treeData" :horizontal="treeOrientation=='1'" :collapsable="true" :props="{label: 'label', expand: 'expand', children: 'children',  key:'some_id'}">
         <template #node="{data,context}">
             <span>
                 <input type="checkbox" :checked="selected.indexOf(data.some_id)> -1" @change="(e)=>toggleSelect(data,e.target.checked)"/> {{data.label}}
@@ -141,7 +141,7 @@ createApp(App)
   prop              | descripton                              | type                   | default
   ------------------|-----------------------------------------|:----------------------:|:---------------------------------------------------------:
   data              |                                         | `Object`               |
-  props             |  configure props                        | `Object`               | `{label: 'label', children: 'children', expand: 'expand'}`
+  props             |  configure props                        | `Object`               | `{label: 'label', children: 'children', expand: 'expand',key: 'id'}`
   labelWidth        |  node label width                       | `String` \| `Number`   | `auto`
   collapsable       |  children node is collapsable           | `Boolean`              | `true`
   renderContent     |  how to render node label               | `Function`             |     -

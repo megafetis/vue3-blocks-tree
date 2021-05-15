@@ -2,6 +2,7 @@
   <div class="org-tree-container">
     <div class="org-tree" :class="{horizontal, collapsable}">
       <blocks-node
+        :key="data[props.key] || data[props.label]"
         :data="data"
         :props="props"
         :horizontal="horizontal"
@@ -42,7 +43,8 @@ export default defineComponent({
       default: () => (<PropsType>{
         label: 'label',
         expand: 'expand',
-        children: 'children'
+        children: 'children',
+        key:'id'
       })
     },
     horizontal: Boolean,

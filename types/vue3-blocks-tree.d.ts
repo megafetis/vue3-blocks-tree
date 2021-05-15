@@ -7,4 +7,5 @@ export interface PropsType {
     label: string;
     expand: string;
     children: string;
+    key?:any| (() => any);
 }

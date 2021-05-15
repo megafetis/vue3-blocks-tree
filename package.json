@@ -1,6 +1,6 @@
 {
   "name": "vue3-blocks-tree",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "A vue3 block organization tree view component. Hierarchical horizontal or vertical tree",
   "main": "dist/vue3-blocks-tree.common.js",
   "unpkg": "dist/vue3-blocks-tree.umd.js",
