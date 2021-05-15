@@ -1526,7 +1526,7 @@ var styles_blocks_tree = __webpack_require__("a560");
 
 var src_install = function install(app, settings) {
   app.component(settings && settings.treeName ? settings.treeName : 'blocks-tree', blocks_tree);
-  app.component(settings && settings.nodeName ? settings.nodeName : 'blocks-node', blocks_tree);
+  app.component(settings && settings.nodeName ? settings.nodeName : 'blocks-node', blocks_node);
 };
 
 blocks_tree.install = src_install;
