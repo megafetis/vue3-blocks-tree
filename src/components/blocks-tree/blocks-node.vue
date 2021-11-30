@@ -13,25 +13,32 @@
                 <span v-if="collapsable && !isLeaf" :class="nodeExpandBtnClass" @click.stop="onExpandBtnClick"></span>
             </div>
         </div>
-        <div v-if="(collapsable && expanded && !isLeaf) || (!collapsable && !isLeaf)" class="org-tree-node-children">
-            <blocks-node v-for="ch in data[props.children]" :key="nodeKey(ch)"
-                :data="ch"
-                :props="props"
-                :collapsable="collapsable"
-                :renderContent="renderContent"
-                :labelWidth="labelWidth"
-                :labelClassName="labelClassName"
-                @node-expand="(e, data,context) => $emit('node-expand', e, data,context)"
-                @node-focus="(e, data,context) => $emit('node-focus', e, data,context)"
-                @node-click="(e, data,context) => $emit('node-click', e, data,context)"
-                @node-mouseover="(e, data,context) => $emit('node-mouseover', e, data,context)"
-                @node-mouseout="(e, data,context) => $emit('node-mouseout', e, data,context)"
-            >
-            <template #node="{data,context}">
-                <slot name="node" :data="data" :context="context"></slot>
-            </template>
-            </blocks-node>
-        </div>
+        <transition
+            name="expand"
+            @enter="enter"
+            @after-enter="afterEnter"
+            @leave="leave"
+        >
+          <div v-if="(collapsable && expanded && !isLeaf) || (!collapsable && !isLeaf)" class="org-tree-node-children">
+              <blocks-node v-for="ch in data[props.children]" :key="nodeKey(ch)"
+                  :data="ch"
+                  :props="props"
+                  :collapsable="collapsable"
+                  :renderContent="renderContent"
+                  :labelWidth="labelWidth"
+                  :labelClassName="labelClassName"
+                  @node-expand="(e, data,context) => $emit('node-expand', e, data,context)"
+                  @node-focus="(e, data,context) => $emit('node-focus', e, data,context)"
+                  @node-click="(e, data,context) => $emit('node-click', e, data,context)"
+                  @node-mouseover="(e, data,context) => $emit('node-mouseover', e, data,context)"
+                  @node-mouseout="(e, data,context) => $emit('node-mouseout', e, data,context)"
+              >
+              <template #node="{data,context}">
+                  <slot name="node" :data="data" :context="context"></slot>
+              </template>
+              </blocks-node>
+          </div>
+        </transition>
     </div>
 </template>
 
@@ -116,7 +123,36 @@ export default defineComponent({
             return key
         }
 
+        const enter = (event) => {
+          const element = event;
+          element.style.visibility = 'hidden';
+          element.style.height = 'auto';
+          const { height } = getComputedStyle(element);
+          element.style.visibility = null;
+          element.style.height = 0;
+          setTimeout(() => {
+            element.style.height = height;
+          });
+        }
+
+        const afterEnter = (event) => {
+          const element = event;
+          element.style.height = 'auto';
+        }
+
+        const leave = (event) => {
+          const element = event;
+          const { height } = getComputedStyle(element);
+          element.style.height = height;
+          setTimeout(() => {
+            element.style.height = 0;
+          });
+        }
+
         return {
+            enter,
+            afterEnter,
+            leave,
             nodeClass,
             innerLabelClass,
             isLeaf,
