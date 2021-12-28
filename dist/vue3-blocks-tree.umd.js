@@ -1157,6 +1157,25 @@ module.exports = Object.setPrototypeOf || ('__proto__' in {} ? function () {
 
 /***/ }),
 
+/***/ "d959":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+// runtime helper for setting properties on components
+// in a tree-shakable way
+exports.default = (sfc, props) => {
+    const target = sfc.__vccOpts || sfc;
+    for (const [key, val] of props) {
+        target[key] = val;
+    }
+    return target;
+};
+
+
+/***/ }),
+
 /***/ "da84":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1238,7 +1257,7 @@ if (typeof window !== 'undefined') {
 // EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/blocks-tree/blocks-tree.vue?vue&type=template&id=25f297dd
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/@vue/cli-plugin-typescript/node_modules/ts-loader??ref--13-3!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist/templateLoader.js??ref--7!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/blocks-tree/blocks-tree.vue?vue&type=template&id=25f297dd&ts=true
 
 var _hoisted_1 = {
   class: "org-tree-container"
@@ -1289,9 +1308,9 @@ function render(_ctx, _cache) {
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.number.constructor.js
 var es_number_constructor = __webpack_require__("a9e3");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/blocks-tree/blocks-node.vue?vue&type=template&id=737d2018
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/@vue/cli-plugin-typescript/node_modules/ts-loader??ref--13-3!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist/templateLoader.js??ref--7!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/blocks-tree/blocks-node.vue?vue&type=template&id=3f3ef0a2&ts=true
 
-var blocks_nodevue_type_template_id_737d2018_hoisted_1 = {
+var blocks_nodevue_type_template_id_3f3ef0a2_ts_true_hoisted_1 = {
   class: "org-tree-node-label"
 };
 var _hoisted_2 = {
@@ -1304,12 +1323,12 @@ var _hoisted_4 = {
   key: 0,
   class: "org-tree-node-children"
 };
-function blocks_nodevue_type_template_id_737d2018_render(_ctx, _cache) {
+function blocks_nodevue_type_template_id_3f3ef0a2_ts_true_render(_ctx, _cache) {
   var _component_blocks_node = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("blocks-node", true);
 
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("div", {
     class: _ctx.nodeClass
-  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", blocks_nodevue_type_template_id_737d2018_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", blocks_nodevue_type_template_id_3f3ef0a2_ts_true_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
     class: _ctx.innerLabelClass,
     style: {
       width: _ctx.labelWidth
@@ -1334,45 +1353,56 @@ function blocks_nodevue_type_template_id_737d2018_render(_ctx, _cache) {
   }), _ctx.collapsable && !_ctx.isLeaf ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("span", {
     key: 0,
     class: _ctx.nodeExpandBtnClass,
-    onClick: _cache[1] || (_cache[1] = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withModifiers"])(function () {
+    onClick: _cache[1] || (_cache[1] = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withModifiers"])( //@ts-ignore
+    function () {
       return _ctx.onExpandBtnClick && _ctx.onExpandBtnClick.apply(_ctx, arguments);
     }, ["stop"]))
-  }, null, 2)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)], 38)]), _ctx.collapsable && _ctx.expanded && !_ctx.isLeaf || !_ctx.collapsable && !_ctx.isLeaf ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("div", _hoisted_4, [(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Fragment"], null, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderList"])(_ctx.data[_ctx.props.children], function (ch) {
-    return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_blocks_node, {
-      key: _ctx.nodeKey(ch),
-      data: ch,
-      props: _ctx.props,
-      collapsable: _ctx.collapsable,
-      renderContent: _ctx.renderContent,
-      labelWidth: _ctx.labelWidth,
-      labelClassName: _ctx.labelClassName,
-      onNodeExpand: _cache[6] || (_cache[6] = function (e, data, context) {
-        return _ctx.$emit('node-expand', e, data, context);
-      }),
-      onNodeFocus: _cache[7] || (_cache[7] = function (e, data, context) {
-        return _ctx.$emit('node-focus', e, data, context);
-      }),
-      onNodeClick: _cache[8] || (_cache[8] = function (e, data, context) {
-        return _ctx.$emit('node-click', e, data, context);
-      }),
-      onNodeMouseover: _cache[9] || (_cache[9] = function (e, data, context) {
-        return _ctx.$emit('node-mouseover', e, data, context);
-      }),
-      onNodeMouseout: _cache[10] || (_cache[10] = function (e, data, context) {
-        return _ctx.$emit('node-mouseout', e, data, context);
-      })
-    }, {
-      node: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function (_ref) {
-        var data = _ref.data,
-            context = _ref.context;
-        return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "node", {
-          data: data,
-          context: context
-        })];
-      }),
-      _: 2
-    }, 1032, ["data", "props", "collapsable", "renderContent", "labelWidth", "labelClassName"]);
-  }), 128))])) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)], 2);
+  }, null, 2)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)], 38)]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Transition"], {
+    name: "expand",
+    onEnter: _ctx.enter,
+    onAfterEnter: _ctx.afterEnter,
+    onLeave: _ctx.leave
+  }, {
+    default: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
+      return [_ctx.collapsable && _ctx.expanded && !_ctx.isLeaf || !_ctx.collapsable && !_ctx.isLeaf ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("div", _hoisted_4, [(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Fragment"], null, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderList"])(_ctx.data[_ctx.props.children], function (ch) {
+        return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_blocks_node, {
+          key: _ctx.nodeKey(ch),
+          data: ch,
+          props: _ctx.props,
+          collapsable: _ctx.collapsable,
+          renderContent: _ctx.renderContent,
+          labelWidth: _ctx.labelWidth,
+          labelClassName: _ctx.labelClassName,
+          onNodeExpand: _cache[6] || (_cache[6] = function (e, data, context) {
+            return _ctx.$emit('node-expand', e, data, context);
+          }),
+          onNodeFocus: _cache[7] || (_cache[7] = function (e, data, context) {
+            return _ctx.$emit('node-focus', e, data, context);
+          }),
+          onNodeClick: _cache[8] || (_cache[8] = function (e, data, context) {
+            return _ctx.$emit('node-click', e, data, context);
+          }),
+          onNodeMouseover: _cache[9] || (_cache[9] = function (e, data, context) {
+            return _ctx.$emit('node-mouseover', e, data, context);
+          }),
+          onNodeMouseout: _cache[10] || (_cache[10] = function (e, data, context) {
+            return _ctx.$emit('node-mouseout', e, data, context);
+          })
+        }, {
+          node: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function (_ref) {
+            var data = _ref.data,
+                context = _ref.context;
+            return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "node", {
+              data: data,
+              context: context
+            })];
+          }),
+          _: 2
+        }, 1032, ["data", "props", "collapsable", "renderContent", "labelWidth", "labelClassName"]);
+      }), 128))])) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)];
+    }),
+    _: 1
+  }, 8, ["onEnter", "onAfterEnter", "onLeave"])], 2);
 }
 // CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js
 function _defineProperty(obj, key, value) {
@@ -1477,7 +1507,42 @@ function _defineProperty(obj, key, value) {
       return key;
     };
 
+    var enter = function enter(event) {
+      var element = event;
+      element.style.visibility = 'hidden';
+      element.style.height = 'auto';
+
+      var _getComputedStyle = getComputedStyle(element),
+          height = _getComputedStyle.height;
+
+      element.style.visibility = null;
+      element.style.height = 0;
+      setTimeout(function () {
+        element.style.height = height;
+      });
+    };
+
+    var afterEnter = function afterEnter(event) {
+      var element = event;
+      element.style.height = 'auto';
+    };
+
+    var leave = function leave(event) {
+      var element = event;
+
+      var _getComputedStyle2 = getComputedStyle(element),
+          height = _getComputedStyle2.height;
+
+      element.style.height = height;
+      setTimeout(function () {
+        element.style.height = 0;
+      });
+    };
+
     return {
+      enter: enter,
+      afterEnter: afterEnter,
+      leave: leave,
       nodeClass: nodeClass,
       innerLabelClass: innerLabelClass,
       isLeaf: isLeaf,
@@ -1491,13 +1556,19 @@ function _defineProperty(obj, key, value) {
     };
   }
 }));
+// EXTERNAL MODULE: ./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist/exportHelper.js
+var exportHelper = __webpack_require__("d959");
+var exportHelper_default = /*#__PURE__*/__webpack_require__.n(exportHelper);
+
 // CONCATENATED MODULE: ./src/components/blocks-tree/blocks-node.vue
 
 
 
-blocks_nodevue_type_script_lang_ts.render = blocks_nodevue_type_template_id_737d2018_render
 
-/* harmony default export */ var blocks_node = (blocks_nodevue_type_script_lang_ts);
+
+const __exports__ = /*#__PURE__*/exportHelper_default()(blocks_nodevue_type_script_lang_ts, [['render',blocks_nodevue_type_template_id_3f3ef0a2_ts_true_render]])
+
+/* harmony default export */ var blocks_node = (__exports__);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/@vue/cli-plugin-typescript/node_modules/ts-loader??ref--13-3!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/blocks-tree/blocks-tree.vue?vue&type=script&lang=ts
 
 
@@ -1534,9 +1605,11 @@ blocks_nodevue_type_script_lang_ts.render = blocks_nodevue_type_template_id_737d
 
 
 
-blocks_treevue_type_script_lang_ts.render = render
 
-/* harmony default export */ var blocks_tree = (blocks_treevue_type_script_lang_ts);
+
+const blocks_tree_exports_ = /*#__PURE__*/exportHelper_default()(blocks_treevue_type_script_lang_ts, [['render',render]])
+
+/* harmony default export */ var blocks_tree = (blocks_tree_exports_);
 // EXTERNAL MODULE: ./src/styles/blocks-tree.less
 var styles_blocks_tree = __webpack_require__("a560");
 
