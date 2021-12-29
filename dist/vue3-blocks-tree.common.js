@@ -1299,9 +1299,9 @@ function render(_ctx, _cache) {
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.number.constructor.js
 var es_number_constructor = __webpack_require__("a9e3");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/@vue/cli-plugin-typescript/node_modules/ts-loader??ref--13-3!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist/templateLoader.js??ref--7!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/blocks-tree/blocks-node.vue?vue&type=template&id=3f3ef0a2&ts=true
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/@vue/cli-plugin-typescript/node_modules/ts-loader??ref--13-3!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist/templateLoader.js??ref--7!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/blocks-tree/blocks-node.vue?vue&type=template&id=00b7a677&ts=true
 
-var blocks_nodevue_type_template_id_3f3ef0a2_ts_true_hoisted_1 = {
+var blocks_nodevue_type_template_id_00b7a677_ts_true_hoisted_1 = {
   class: "org-tree-node-label"
 };
 var _hoisted_2 = {
@@ -1314,12 +1314,12 @@ var _hoisted_4 = {
   key: 0,
   class: "org-tree-node-children"
 };
-function blocks_nodevue_type_template_id_3f3ef0a2_ts_true_render(_ctx, _cache) {
+function blocks_nodevue_type_template_id_00b7a677_ts_true_render(_ctx, _cache) {
   var _component_blocks_node = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("blocks-node", true);
 
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("div", {
     class: _ctx.nodeClass
-  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", blocks_nodevue_type_template_id_3f3ef0a2_ts_true_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", blocks_nodevue_type_template_id_00b7a677_ts_true_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
     class: _ctx.innerLabelClass,
     style: {
       width: _ctx.labelWidth
@@ -1451,7 +1451,7 @@ function _defineProperty(obj, key, value) {
     var labelWidth = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["computed"])(function () {
       return props.labelWidth ? typeof props.labelWidth == 'number' ? "".concat(props.labelWidth, "px") : props.labelWidth : 'auto';
     });
-    var expanded = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["ref"])(props.data[props.props.expand] || true);
+    var expanded = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["ref"])(props.data[props.props.expand] && true);
     var nodeClass = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["computed"])(function () {
       return {
         'org-tree-node': true,
@@ -1557,7 +1557,7 @@ var exportHelper_default = /*#__PURE__*/__webpack_require__.n(exportHelper);
 
 
 
-const __exports__ = /*#__PURE__*/exportHelper_default()(blocks_nodevue_type_script_lang_ts, [['render',blocks_nodevue_type_template_id_3f3ef0a2_ts_true_render]])
+const __exports__ = /*#__PURE__*/exportHelper_default()(blocks_nodevue_type_script_lang_ts, [['render',blocks_nodevue_type_template_id_00b7a677_ts_true_render]])
 
 /* harmony default export */ var blocks_node = (__exports__);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/@vue/cli-plugin-typescript/node_modules/ts-loader??ref--13-3!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/blocks-tree/blocks-tree.vue?vue&type=script&lang=ts
