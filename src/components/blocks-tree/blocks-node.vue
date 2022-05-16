@@ -160,7 +160,6 @@ export default defineComponent({
             onExpandBtnClick,
             innerLabelWidth,
             expanded,
-            data:props.data,
             nodeContext,
             nodeKey
         }
