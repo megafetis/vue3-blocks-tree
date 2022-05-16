@@ -1,10 +1,10 @@
 <template>
     <div :class="nodeClass">
         <div class="org-tree-node-label">
-            <div :class="innerLabelClass" :style="{width:labelWidth}" 
-                @click="(e)=>$emit('node-click',e,data,nodeContext)" 
-                @mouseout="(e)=>$emit('node-mouseout',e,data,nodeContext)" 
-                @mouseover="(e)=>$emit('node-mouseover',e,data,nodeContext)" 
+            <div :class="innerLabelClass" :style="{width:innerLabelWidth}"
+                @click="(e)=>$emit('node-click',e,data,nodeContext)"
+                @mouseout="(e)=>$emit('node-mouseout',e,data,nodeContext)"
+                @mouseover="(e)=>$emit('node-mouseover',e,data,nodeContext)"
                 @focus="(e)=>$emit('node-focus',e,data,nodeContext)">
                 <slot name="node" :data="data" :context="nodeContext">
                     <span v-if="!renderContent">{{data[props.label]}}</span>
@@ -73,9 +73,9 @@ export default defineComponent({
 
     setup(props,{ slots, attrs, emit,expose }) {
         let isLeaf = computed(()=>Array.isArray(props.data[props.props.children]) && props.data[props.props.children].length > 0 ? false:true);
-        let labelWidth = computed(()=>props.labelWidth ? (typeof(props.labelWidth)=='number' ? `${props.labelWidth}px` :props.labelWidth) :'auto');
+        let innerLabelWidth = computed(()=>props.labelWidth ? (typeof(props.labelWidth)=='number' ? `${props.labelWidth}px` :props.labelWidth) :'auto');
         let expanded = ref<boolean>(props.data[props.props.expand]&&true);
-        
+
         let nodeClass = computed(()=>{
             return {
                 'org-tree-node':true,
@@ -83,10 +83,10 @@ export default defineComponent({
                 'collapsed':!isLeaf.value && props.collapsable && !expanded.value
             }
         });
-        
+
         let innerLabelClass = computed(()=>{
             let labelClassName = typeof props.labelClassName == 'function' ? props.labelClassName(props.data) : props.labelClassName;
-            
+
             return {
                 'org-tree-node-label-inner':true,
                 [labelClassName]:!!labelClassName,
@@ -113,7 +113,7 @@ export default defineComponent({
             isExpanded:()=>expanded.value,
             toggleExpand,
         }
-        
+
         const nodeKey = (child)=> {
             var key = child[props.props.key];
 
@@ -158,9 +158,8 @@ export default defineComponent({
             isLeaf,
             nodeExpandBtnClass,
             onExpandBtnClick,
-            labelWidth,
+            innerLabelWidth,
             expanded,
-            data:props.data,
             nodeContext,
             nodeKey
         }
